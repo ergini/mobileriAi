@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { BadgeDollarSign, Bot, BrainCircuit, BrainCog, FileQuestion, MessageSquareDashed, Timer, VideoIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import Link from "next/link"
+import getAnswer from "./../assistantAI"
 
 const testimonials = [
     {
@@ -33,6 +34,16 @@ const testimonials = [
         description: "Its from the future."
     },
 ]
+
+const openDemo = () => {
+    const div = document.createElement("div")
+    div.id = "demo"
+    div.innerHTML = `<div className="demo__container">
+    <input type="text" id="question" />
+    <button onClick={getAnswer} type="submit" id="submit">Send</button>
+    </div>`
+    document.body.appendChild(div)
+}
 
 export default function LandingContent() {
     return (
@@ -248,6 +259,9 @@ export default function LandingContent() {
                     </CardHeader>
                 </Card>
             </div>
+            <Button onClick={openDemo} variant="modern1" className="mt-4">
+                Open a demo
+            </Button>
         </div>
     )
 }
