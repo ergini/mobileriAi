@@ -40,7 +40,7 @@ const openDemo = () => {
     div.id = "demo"
     div.innerHTML = `<div className="demo__container">
     <input type="text" id="question" />
-    <button onClick={getAnswer} type="submit" id="submit">Send</button>
+    <button onClick=${getAnswer} type="submit" id="submit">Send</button>
     </div>`
     document.body.appendChild(div)
 }
